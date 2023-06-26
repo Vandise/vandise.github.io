@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cessna 150 Performance</title>
+    <script>
+      var POH_INTERVALS = 2500;
+      var POH_STD_TEMP_F = 59;
+      var POH_STD_TEMP_INCREASE_TEMP = 35;
+      var POH_STD_TEMP_PCT = 0.1;
+      var POH_STD_TEMP_ALT_INTERVALS = 9;
+
+      function submitForm(event) {
+        groundRun(
+          parseInt(document.getElementById('altitude').value),
+          parseInt(document.getElementById('temperature').value),
+          parseInt(document.getElementById('headwind').value),
+          false, document.getElementById('groundRun')
+        );
+        obs50ft(
+          parseInt(document.getElementById('altitude').value),
+          parseInt(document.getElementById('temperature').value),
+          parseInt(document.getElementById('headwind').value),
+          false, document.getElementById('obs50ft')
+        );        
+        return;
+      }
+
+      // obs50 f(A) { 1142*(e^(0.1878 * ((A / 2500) + 1))) }
+      //       f(T, A) { ((T - (59 - ( 9 * ( A / 2500 ) ))) / 35) * 0.1 }
+      //       f(A, W) { 27.847 * (e^(0.1609 * ((x/2500) + 1) )) * W }
+      function obs50ft(altitude, temperature, headwind, grass, outputElement) {
+        //obs50ft
+        var OBS_BASELINE = 1142 * (
+          Math.pow(
+            Math.E,
+            (0.1878 * ((altitude / POH_INTERVALS) + 1))
+          )
+        );
+
+        var TEMP_PCT = (
+          (temperature - (
+            POH_STD_TEMP_F - ( POH_STD_TEMP_ALT_INTERVALS * ( altitude / POH_INTERVALS ) ))
+          ) / POH_STD_TEMP_INCREASE_TEMP
+        ) * POH_STD_TEMP_PCT;
+
+        var HEADWIND = (27.847 * (
+          Math.pow(Math.E,
+            (0.1609 * ((altitude / POH_INTERVALS) + 1))
+          )
+        )) * headwind;
+
+        var result = (OBS_BASELINE + ( OBS_BASELINE * TEMP_PCT)) - HEADWIND;
+
+        outputElement.innerHTML = result.toFixed(2).toString();
+      }
+
+      ////
+      // groundRun = f(A) {  601.23 * e^( 0.2 * ( 1.0203275 * ( ( A / 2500) + 1 ) )) }
+      // temp = f(T, A) { ((T - (59 - ( 9 * ( A / 2500 ) ))) / 35) * 0.1 }
+      // headWind = f(W, A) { (4.825( (A/2500) + 1 ) + 16.375) * W }
+      ////
+      function groundRun(altitude, temperature, headwind, grass, outputElement) {
+        var GR_BASELINE = 601.23 * (Math.pow(
+          Math.E,
+          (0.2 * (1.0203275 * ((altitude / POH_INTERVALS) + 1) ))
+        ));
+
+        var TEMP_PCT = (
+          (temperature - (
+            POH_STD_TEMP_F - ( POH_STD_TEMP_ALT_INTERVALS * ( altitude / POH_INTERVALS ) ))
+          ) / POH_STD_TEMP_INCREASE_TEMP
+        ) * POH_STD_TEMP_PCT;
+
+        var HEADWIND = (4.825 * ( (altitude / POH_INTERVALS) + 1 ) + 16.375) * headwind;
+
+        var result = (GR_BASELINE + ( GR_BASELINE * TEMP_PCT)) - HEADWIND;
+
+        outputElement.innerHTML = result.toFixed(2).toString();
+      }
+    </script>
+    <style>
+      table {
+        width: 100%;
+        border: 2px solid black;
+        margin-bottom: 1em;
+      }
+      thead td, tfoot td {
+        padding: 0 1em;
+      }
+      tbody {
+        text-align: center;
+      }
+      td, tr {
+        border: 1px solid black;
+      }
+      .table-small-col {
+        width: 50px;
+      }
+      .tbl-no-border td, .tbl-no-border {
+        border: none;
+      }
+      .tbl-no-border td[rowspan="3"] {
+        border-right: 1px solid black;
+      }
+      form > div:first-of-type {
+        display: grid;
+        grid-template-columns: 150px 150px 150px;
+        grid-gap: 1em;
+        margin-bottom: 1em;
+      }
+      form > div input {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cessna 150 Performance Calculator (1966)</h1>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <td colspan="11">
+              <h2>POH: Take-off Distance -- Flaps Retracted &nbsp; &nbsp; &nbsp; &nbsp; Hard Surface Runway</h2>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" class='table-small-col'>Gross wt. lbs.</td>
+            <td rowspan="2" class='table-small-col'>IAS 50 ft. mph</td>
+            <td rowspan="2" class='table-small-col'>Head Wind Knots </td>
+            <td colspan="2">At Sea Level &amp; 59F</td>
+            <td colspan="2">At 2500ft &amp; 50F</td>
+            <td colspan="2">At 5000ft &amp; 41F</td>
+            <td colspan="2">At 7500ft &amp; 32F</td>
+          </tr>
+          <tr>
+            <td>Ground Run</td>
+            <td>50ft OBS</td>
+            <td>Ground Run</td>
+            <td>50ft OBS</td>
+            <td>Ground Run</td>
+            <td>50ft OBS</td>
+            <td>Ground Run</td>
+            <td>50ft OBS</td>
+          </tr>
+          <tr class="tbl-no-border">
+            <td rowspan="3">1600</td>
+            <td rowspan="3">64</td>
+            <td>0</td>
+            <td>735</td>
+            <td>1385</td>
+            <td>910</td>
+            <td>1660</td>
+            <td>1115</td>
+            <td>1985</td>
+            <td>1360</td>
+            <td>2440</td>
+          </tr>
+          <tr class="tbl-no-border">
+            <td>10</td>
+            <td>500</td>
+            <td>1035</td>
+            <td>630</td>
+            <td>1250</td>
+            <td>780</td>
+            <td>1510</td>
+            <td>970</td>
+            <td>1875</td>
+          </tr>
+          <tr class="tbl-no-border">
+            <td>20</td>
+            <td>305</td>
+            <td>730</td>
+            <td>395</td>
+            <td>890</td>
+            <td>505</td>
+            <td>1090</td>
+            <td>650</td>
+            <td>1375</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="11">
+              <p>Notes: 1. Increase the distances 10% for each 35F. increase in temperature above standard for the particular altitude.</p>
+              <p>For operation on a dry, grass runway, increase distances (both ground run and total to clear 50ft obstacle) by 7% of the total to clear 50ft obstacle figure.</p>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <form id="performance-form">
+        <div>
+          <label for="altitude">
+            <p>Altitude</p>
+            <input
+              type="number"
+              min="-16500"
+              max="16500"
+              id="altitude"
+              value="0"
+            />
+          </label>
+          <label for="temperature">
+            <p>Temperature</p>
+            <input
+              type="number"
+              min="-40"
+              max="130"
+              id="temperature"
+              value="59"
+            />
+          </label>
+          <label for="headwind">
+            <p>Head Wind (knots)</p>
+            <input
+              type="number"
+              min="0"
+              max="20"
+              id="headwind"
+              value="0"
+            />
+          </label>
+        </div>
+        <div>
+          <input type="submit" value="Calculate" />
+        </div>
+      </form>
+      <section>
+        <p>Ground Run: <span id="groundRun">0</span> ft</p>
+        <p>50ft OBS: <span id="obs50ft">0</span> ft</p>
+      </section>
+      <section>
+
+      <table>
+        <thead>
+          <tr>
+            <td colspan="11">
+              <h2>Calculator Comparison</h2>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2" class='table-small-col'>Gross wt. lbs.</td>
+            <td rowspan="2" class='table-small-col'>IAS 50 ft. mph</td>
+            <td rowspan="2" class='table-small-col'>Head Wind Knots </td>
+            <td colspan="2">At Sea Level &amp; 59F</td>
+            <td colspan="2">At 2500ft &amp; 50F</td>
+            <td colspan="2">At 5000ft &amp; 41F</td>
+            <td colspan="2">At 7500ft &amp; 32F</td>
+          </tr>
+          <tr>
+            <td>Ground Run</td>
+            <td>50ft OBS</td>
+            <td>Ground Run</td>
+            <td>50ft OBS</td>
+            <td>Ground Run</td>
+            <td>50ft OBS</td>
+            <td>Ground Run</td>
+            <td>50ft OBS</td>
+          </tr>
+          <tr class="tbl-no-border">
+            <td rowspan="3">1600</td>
+            <td rowspan="3">64</td>
+            <td>0</td>
+            <td>
+              <span class="comparison" data-hw='0' data-alt='0' data-temp='59'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='0' data-alt='0' data-temp='59'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='0' data-alt='2500' data-temp='50'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='0' data-alt='2500' data-temp='50'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='0' data-alt='5000' data-temp='41'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='0' data-alt='5000' data-temp='41'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='0' data-alt='7500' data-temp='32'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='0' data-alt='7500' data-temp='32'></span>
+            </td>
+          </tr>
+          <tr class="tbl-no-border">
+            <td>10</td>
+            <td>
+              <span class="comparison" data-hw='10' data-alt='0' data-temp='59'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='10' data-alt='0' data-temp='59'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='10' data-alt='2500' data-temp='50'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='10' data-alt='2500' data-temp='50'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='10' data-alt='5000' data-temp='41'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='10' data-alt='5000' data-temp='41'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='10' data-alt='7500' data-temp='32'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='10' data-alt='7500' data-temp='32'></span>
+            </td>
+          </tr>
+          <tr class="tbl-no-border">
+            <td>20</td>
+            <td>
+              <span class="comparison" data-hw='20' data-alt='0' data-temp='59'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='20' data-alt='0' data-temp='59'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='20' data-alt='2500' data-temp='50'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='20' data-alt='2500' data-temp='50'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='20' data-alt='5000' data-temp='41'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='20' data-alt='5000' data-temp='41'></span>
+            </td>
+            <td>
+              <span class="comparison" data-hw='20' data-alt='7500' data-temp='32'></span>
+            </td>
+            <td>
+              <span class="obs-comparison" data-hw='20' data-alt='7500' data-temp='32'></span>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="11">
+              <p>Notes: 1. Data is derived from the POH with an R^2 of at least 0.95. Anything beyond the POH is theoretical.</p>
+              <p>Results should be within 50ft of the POH.</p>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023. Benjamin J. Anderson</p>
+    </footer>
+    <script>
+      document.getElementById('performance-form').onsubmit = function(e) {
+        e.preventDefault();
+        submitForm(e);
+      };
+      Array.from(document.getElementsByClassName('comparison')).forEach(function(el) {
+        groundRun(
+          parseInt(el.dataset.alt),
+          parseInt(el.dataset.temp),
+          parseInt(el.dataset.hw), false, el
+        );
+      });
+      Array.from(document.getElementsByClassName('obs-comparison')).forEach(function(el) {
+        obs50ft(
+          parseInt(el.dataset.alt),
+          parseInt(el.dataset.temp),
+          parseInt(el.dataset.hw), false, el
+        );
+      });
+    </script>
+  </body>
+</html>
