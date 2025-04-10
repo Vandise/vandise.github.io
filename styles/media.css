@@ -1,0 +1,81 @@
+/*
+  320
+  480
+  768
+  992
+  1200
+*/
+
+@media all and (max-width: 768px) {
+  h2 {
+    text-align: center;
+  }
+
+  main > section.maintenance {
+    margin: 0 1em;
+    margin-top: 5em;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+  }
+}
+
+@media all and (min-width: 768px) {
+  main > section.stripe:not(.centered) {
+    text-align: left;
+  }
+
+  section.stripe.red {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, rgb(162,42,51) 50%, transparent 50%) 100% 1;
+  }
+}
+
+@media all and (max-width: 992px) {
+
+  body > header {
+    display: block !important;
+    height: auto;
+  }
+
+  body > header > h1 img {
+    margin: 0 auto;
+  }
+
+  body > header > nav {
+    text-align: center;
+  }
+
+   body > header > nav ul {
+     padding: 0;
+     margin-top: 2em;
+   }
+
+  body > header > nav ul > li {
+    padding: 0.5em 2em;
+  }
+
+  footer, footer > div:first-of-type {
+    display: block;
+    text-align: center;
+  }
+
+  footer > div {
+    padding: 0.5em 0;
+  }
+
+  footer img {
+    margin: auto;
+  }
+}
+
+
+@media all and (min-width: 1200px) {
+  main > section.maintenance > div:first-of-type:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 25%;
+    width: 3px;
+    height: 75%;
+    background: rgb(162,42,51);
+  }
+}

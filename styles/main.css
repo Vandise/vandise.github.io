@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+body {
+  color: white;
+  background-color: rgb(0,0,0);
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Roboto Flex", -apple-system, "system-ui", sans-serif;
+  font-weight: 300;
+  max-width: 1480px;
+}
+
+h1,h2,h3,h4 {
+  font-family: "Roboto Flex", -apple-system, "system-ui", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0.33em 0;
+  font-size: 250%;
+}
+
+h3 {
+  font-size: 175%;
+}
+
+
+h5 {
+  font-size: 115%;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover, button:hover {
+  cursor: pointer;
+}
+
+button {
+  color: white;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.centered {
+  text-align: center;
+}
+
+span.red {
+  color: rgb(162,42,51);
+}
+
+.btn {
+  padding: 0.33em 1em;
+  border-radius: 0.75em;
+  font-size: 133%;
+  background-color: rgb(162,42,51);
+  text-shadow: 1px 1px 0px black;
+}
+
+section.stripe {
+  position: relative;
+  margin: 0.5em 2em;
+  text-align: center;
+}
+
+section.stripe.dual-bars:before {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+section.stripe.dual-bars:after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+}
+
+section.stripe header {
+  position: relative;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+section.stripe header:after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+body > header {
+  position: static;
+  top: 0;
+  display: grid;
+  grid-template-columns: minmax(150px, 250px) auto;
+  background-color: rgba(0,0,0,0.45);
+  height: 40px;
+  padding: 1em 1em;
+  border-bottom: 2px solid rgb(162,42,51);
+}
+
+body > header > h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body > header > h1 img {
+  width: 188px;
+  height: 45px;
+}
+
+body > header > nav {
+  text-align: right;
+}
+
+body > header > nav ul {
+  list-style-type: none;
+}
+
+body > header > nav ul li {
+  display: inline-block;
+  padding: 0 1em;
+}
+
+main > .hero {
+  position: relative;
+  min-height: 66vh;
+  background-color: rgba(0,0,0);
+  margin-bottom: 10em;
+}
+
+main > .hero > .gallery {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/n5267q.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  clip-path: ellipse(64% 74% at 50% 36%);
+  border-bottom: 5px solid rgb(162,42,51);
+}
+
+main > .hero > .cta {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 45%);
+  background-color: rgba(0,0,0,0.66);
+  width: 60vw;
+  text-align: center;
+}
+
+main > .hero > .cta > .cta-action {
+  padding: 1em 0;
+}
+
+main > .stripe.flight-training {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1em;
+
+  margin-top: 2em;
+  text-align: center;
+}
+
+main > .stripe.flight-training h3 {
+  margin: 0;
+  padding: 0.5em 0;
+}
+
+main > .stripe.flight-training > div {
+  box-shadow: inset 0px 0px 50px 14px #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+main > .stripe.flight-training > div > div {
+  height: 100%;
+  background-color: rgba(0,0,0,0.66);
+  padding: 3em 2em;
+}
+
+main > .stripe.flight-training .instrument {
+  background-image: url("/images/instrument.png");
+}
+
+main > .stripe.flight-training .private {
+  background-image: url("/images/private.png");
+}
+
+main > .stripe.flight-training .commercial {
+  background-image: url("/images/commercial.png");
+}
+
+main > .stripe.rentals-stripe {
+  margin: 5em 0;
+}
+
+main > .stripe.rentals-stripe h2 {
+  padding: 0.25em 0;
+}
+
+main > section.rentals {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+  padding: 0 3em;
+}
+
+main > section.rentals > div {
+  position: relative;
+  min-height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0px 0px 40px 10px #000; 
+}
+
+main > section.rentals > div > div {
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  padding: 2em 1em;
+}
+
+main > section.rentals > div > div > div {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0%);
+}
+
+main > section.rentals .n29239 {
+  background-image: url("/images/n29239.png");
+}
+
+main > section.rentals .n104fs {
+  background-image: url("/images/n104fs.jpeg");
+}
+
+main > section.rentals .n12919 {
+  background-image: url("/images/n12919.jpeg");
+}
+
+main > section.rentals .n5267q {
+  background-image: url("/images/n5267q.png");
+}
+
+main > section.rentals .n75866 {
+  background-image: url("/images/n75866.png");
+}
+
+main > section.maintenance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 2em;
+  margin: 0 4em;
+  margin-top: 5em;
+  text-align: center;
+}
+
+main > section.maintenance h2 {
+  margin-bottom: 1em;
+}
+
+main > section.maintenance > div {
+  position: relative;
+}
+
+main > section.maintenance p {
+  text-align: left;
+  margin: 0 2em;
+  margin-bottom: 1em;
+}
+
+main > section.maintenance ul {
+  margin: 1em 0 0 5%;
+  list-style-type: none;
+  text-align: left;
+}
+
+main > section.maintenance .avionics-gallery, main .aircraft-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  grid-gap: 1em;
+  text-align: center;
+  justify-self: center;
+}
+
+main > section.stripe.shop-rate-stripe {
+  font-size: 80%;
+  margin-top: 3em;
+}
+
+footer {
+  background-color: rgb(162,42,51);
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 0.25em 2em;
+  align-self: center;
+  justify-self: center;
+}
+
+footer > div:first-of-type {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+footer > div, footer > div:first-of-type > div {
+  margin: auto 0;
+}
+
+footer img {
+  max-width: 125px;
+}
+
+footer h2 {
+  font-size: 120%;
+}
+
+footer h3 {
+  font-size: 90%;
+  font-weight: 400;
+}
+
+/*
+
+  Aircraft Pages
+
+*/
+
+main > section.aircraft-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2em;
+  margin: 0 auto;
+  max-width: 66%;
+}
+
+main > section.aircraft-specs > div > div {
+  margin-left: 2em;
+}
+
+main > section.aircraft-spotlight {
+  margin: 3em 3em;
+}
+
+/*
+
+  Modal
+
+*/
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+#gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+#gallery-modal > #gallery-modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+#gallery-modal #gallery-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  transition: 0.3s;
+}
+
+#gallery-modal #gallery-modal-close:hover { cursor: pointer; }
+
+.modal-image:hover {
+  cursor: pointer;
+}
