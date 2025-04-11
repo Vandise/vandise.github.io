@@ -68,6 +68,10 @@ span.red {
   background-color: rgb(162,42,51);
 }
 
+.content {
+  margin: 2em 3em;
+}
+
 .icon.social {
   font-size: 150%;
 }
@@ -199,6 +203,10 @@ main > .hero > .gallery {
 
 main > .hero > .gallery.avionics {
   background-image: url("/images/instrument.png");
+}
+
+main > .hero > .gallery.about {
+  background-image: url("/images/private.png");
 }
 
 main > .hero > .cta {
@@ -544,6 +552,25 @@ main > section.aircraft-details {
   grid-gap: 2em;
   margin: 0 auto;
   max-width: 66%;
+}
+
+main > section.aircraft-details .manuals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+}
+
+main > section.aircraft-details .manuals > div {
+  margin-top: 1em;
+  text-align: center;
+}
+
+main > section.aircraft-details .manuals > div a {
+  border: 1px solid white;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  width: 100%;
+  display: block;
 }
 
 main > section.aircraft-details > div > div {

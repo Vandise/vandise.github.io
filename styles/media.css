@@ -58,6 +58,10 @@
     padding: 0.5em 2em;
   }
 
+  main > section.aircraft-details .manuals {
+    display: block;
+  }
+
   footer, footer > div:first-of-type {
     display: block;
     text-align: center;
