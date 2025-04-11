@@ -11,6 +11,11 @@
     text-align: center;
   }
 
+  main > .hero > .cta {
+    width: 85vw;
+    padding: 1em;
+  }
+
   main > section.maintenance {
     margin: 0 1em;
     margin-top: 5em;
