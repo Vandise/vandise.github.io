@@ -261,8 +261,42 @@ main > .stripe.rentals-stripe, main > .stripe.instructors-stripe {
 main > section.instructors {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-gap: 1em;
-  padding: 0 3em;
+  grid-gap: 2em;
+  padding: 0.25em 3em;
+}
+
+main > section.instructors figure {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 5em;
+}
+
+main > section.instructors img {
+  height: 100%;
+}
+
+main > section.instructors h3 {
+  font-size: 120%;
+}
+
+main > section.instructors h4 {
+  font-size: 105%;
+}
+
+main > section.biolist.instructors > div {
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-gap: 2em;
+  background-color: rgba(49, 49, 49, 0.45);
+  border-radius: 0.5em;
+}
+
+main > section.biolist.instructors > div > div {
+  margin: auto;
+  padding: 0.75em;
 }
 
 main > section.biolist.maintenance-staff {
@@ -292,12 +326,6 @@ main > section.biolist.maintenance-staff > div header {
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-
-main > section.biolist.maintenance-staff > div:hover {
-  cursor: pointer;
-  box-shadow: unset;
-  transition: all 0.8s linear;
 }
 
 main > section.biolist.maintenance-staff h3 {
@@ -364,6 +392,12 @@ main > section.rentals > div > div > div {
   left: 50%;
   bottom: 10%;
   transform: translate(-50%, 0%);
+}
+
+main > section.rentals a:hover {
+  cursor: pointer;
+  font-size: 110%;
+  transition: all 0.1s linear; 
 }
 
 main > section.rentals .n29239 {
