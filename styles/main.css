@@ -22,7 +22,6 @@ h3 {
   font-size: 175%;
 }
 
-
 h5 {
   font-size: 115%;
   font-weight: 400;
@@ -102,6 +101,27 @@ section.stripe.dual-bars:after {
   width: 50%;
   height: 2px;
   background-color: white;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0%);
+}
+
+section.stripe.dual-red-bar:before {
+  content: "";
+  width: 15%;
+  height: 2px;
+  background-color: rgb(162,42,51);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+section.stripe.dual-red-bar:after {
+  content: "";
+  width: 15%;
+  height: 2px;
+  background-color: rgb(162,42,51);
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -234,12 +254,86 @@ main > .stripe.flight-training .commercial {
   background-image: url("/images/commercial.png");
 }
 
-main > .stripe.rentals-stripe {
+main > .stripe.rentals-stripe, main > .stripe.instructors-stripe {
   margin: 5em 0;
 }
 
-main > .stripe.rentals-stripe h2 {
+main > section.instructors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 1em;
+  padding: 0 3em;
+}
+
+main > section.biolist.maintenance-staff {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 2em;
+  text-align: left;
+  margin-top: 3em;
+  padding: 0 2em;
+}
+
+main > section.maintenance-staff > div {
+  position: relative;
+  min-height: 250px;
+  /*
+  background-color: rgb(162,42,51);
   padding: 0.25em 0;
+  */
+  background-image: url("/images/cfiplaceholder.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0px 0px 50px 2px #000;
+}
+
+main > section.biolist.maintenance-staff > div header {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+main > section.biolist.maintenance-staff > div:hover {
+  cursor: pointer;
+  box-shadow: unset;
+  transition: all 0.8s linear;
+}
+
+main > section.biolist.maintenance-staff h3 {
+  max-width: 70%;
+  margin: 0;
+  font-size: 115%;
+  background-color: rgb(162,42,51);
+  padding: 0.25em 1em;
+  font-weight: 500;
+}
+
+main > section.biolist.maintenance-staff h4 {
+  font-size: 95%;
+  padding: 0.33em 1em;
+  background-color: #313131;
+  font-weight: 400;
+  text-transform: unset;
+  max-width: 80%;
+  margin: 0;
+}
+
+main > section.biolist.maintenance-staff figure {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  border-radius: 5em;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+main > section.biolist.maintenance-staff figure img {
+  height: 100%;
+}
+
+main > .stripe.rentals-stripe h2, main > .stripe.instructors-stripe h2 {
+  padding: 0.33em 0;
 }
 
 main > section.rentals {
@@ -335,7 +429,8 @@ main > section.maintenance .cta {
 
 main > section.stripe.shop-rate-stripe {
   font-size: 80%;
-  margin-top: 3em;
+  margin-top: 5em;
+  margin-bottom: 3em;
 }
 
 footer {
