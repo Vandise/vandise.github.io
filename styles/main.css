@@ -69,6 +69,14 @@ span.red {
   background-color: rgb(162,42,51);
 }
 
+.icon.social {
+  font-size: 150%;
+}
+
+.icon.social:not(:first-of-type) {
+  margin: 0 0.5em;
+}
+
 section.stripe {
   position: relative;
   margin: 0.5em 2em;
