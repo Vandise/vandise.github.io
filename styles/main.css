@@ -67,7 +67,6 @@ span.red {
   border-radius: 0.75em;
   font-size: 133%;
   background-color: rgb(162,42,51);
-  text-shadow: 1px 1px 0px black;
 }
 
 section.stripe {
@@ -314,6 +313,10 @@ main > section.maintenance .avionics-gallery, main .aircraft-gallery {
   justify-self: center;
 }
 
+main > section.maintenance .cta {
+  margin-top: 2.5em;
+}
+
 main > section.stripe.shop-rate-stripe {
   font-size: 80%;
   margin-top: 3em;
@@ -350,6 +353,13 @@ footer h3 {
   font-size: 90%;
   font-weight: 400;
 }
+
+/*
+  
+  Shared Components
+
+*/
+
 
 /*
 
