@@ -73,6 +73,10 @@ span.red {
   font-size: 150%;
 }
 
+.icon.social:hover {
+  cursor: pointer;
+}
+
 .icon.social:not(:first-of-type) {
   margin: 0 0.5em;
 }
@@ -368,6 +372,22 @@ footer h3 {
 
 */
 
+.gallery > .see-more {
+  background: gray;
+  background-image: url("/images/avionicspanel-1.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  min-height: 110px;
+}
+
+.gallery > .see-more > div {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /*
 
