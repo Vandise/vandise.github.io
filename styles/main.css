@@ -177,6 +177,10 @@ main > .hero > .gallery {
   border-bottom: 5px solid rgb(162,42,51);
 }
 
+main > .hero > .gallery.avionics {
+  background-image: url("/images/instrument.png");
+}
+
 main > .hero > .cta {
   position: absolute;
   bottom: 0;
@@ -409,6 +413,21 @@ main > section.aircraft-specs > div > div {
 
 main > section.aircraft-spotlight {
   margin: 3em 3em;
+}
+
+/*
+
+  Gallery Pages
+
+*/
+
+main > section.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2em;
+  margin: 0 auto;
+  margin-top: 3em;
+  max-width: 90%;
 }
 
 /*
