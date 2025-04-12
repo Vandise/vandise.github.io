@@ -206,7 +206,7 @@ main > .hero > .gallery.avionics {
 }
 
 main > .hero > .gallery.about {
-  background-image: url("/images/private.png");
+  background-image: url("/images/about/hero.png");
 }
 
 main > .hero > .cta {
@@ -512,6 +512,17 @@ footer h3 {
   Shared Components
 
 */
+
+.small-image-desc-split {
+  display: grid;
+  grid-template-columns: minmax(150px, 200px) auto;
+  grid-gap: 1em;
+}
+
+.small-image-desc-split img {
+  width: 150px;
+  height: 150px;
+}
 
 .gallery > .see-more {
   background: gray;

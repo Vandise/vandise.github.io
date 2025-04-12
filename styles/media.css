@@ -21,6 +21,15 @@
     margin-top: 5em;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
   }
+
+  .small-image-desc-split {
+    display: block;
+    text-align: center;
+  }
+
+  .small-image-desc-split img {
+    margin: 0 auto;
+  }
 }
 
 @media all and (min-width: 768px) {
