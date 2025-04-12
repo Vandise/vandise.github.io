@@ -409,7 +409,7 @@ main > section.rentals > div > div > div {
 main > section.rentals a:hover {
   cursor: pointer;
   font-size: 110%;
-  transition: all 0.1s linear; 
+  transition: all 0.1s linear;
 }
 
 main > section.maintenance {
