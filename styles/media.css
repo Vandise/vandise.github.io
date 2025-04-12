@@ -74,11 +74,11 @@
   footer, footer > div:first-of-type {
     display: block;
     text-align: center;
-    width: 100%;
   }
 
   footer > div {
     padding: 0.5em 0;
+    width: 100%;
   }
 
   footer img {
