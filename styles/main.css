@@ -193,7 +193,7 @@ main > .hero > .gallery {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("/images/n5267q.png");
+  background-image: url("/images/n5267q/n5267q.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -251,15 +251,15 @@ main > .stripe.flight-training > div > div {
 }
 
 main > .stripe.flight-training .instrument {
-  background-image: url("/images/instrument.png");
+  background-image: url("/images/landingpage/instrument.png");
 }
 
 main > .stripe.flight-training .private {
-  background-image: url("/images/private.png");
+  background-image: url("/images/landingpage/private.png");
 }
 
 main > .stripe.flight-training .commercial {
-  background-image: url("/images/commercial.png");
+  background-image: url("/images/landingpage/commercial.png");
 }
 
 main > .stripe.rentals-stripe, main > .stripe.instructors-stripe {
@@ -323,7 +323,7 @@ main > section.maintenance-staff > div {
   background-color: rgb(162,42,51);
   padding: 0.25em 0;
   */
-  background-image: url("/images/cfiplaceholder.jpg");
+  background-image: url("/images/instructors/cfiplaceholder.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -409,23 +409,23 @@ main > section.rentals a:hover {
 }
 
 main > section.rentals .n29239 {
-  background-image: url("/images/n29239.png");
+  background-image: url("/images/n29239/n29239.png");
 }
 
 main > section.rentals .n104fs {
-  background-image: url("/images/n104FS.jpeg");
+  background-image: url("/images/n104fs/n104FS.jpeg");
 }
 
 main > section.rentals .n12919 {
-  background-image: url("/images/n12919.jpeg");
+  background-image: url("/images/n12919/n12919.jpeg");
 }
 
 main > section.rentals .n5267q {
-  background-image: url("/images/n5267q.png");
+  background-image: url("/images/n5267q/n5267q.png");
 }
 
 main > section.rentals .n75866 {
-  background-image: url("/images/n75866.png");
+  background-image: url("/images/n75866/n75866.png");
 }
 
 main > section.maintenance {
