@@ -408,26 +408,6 @@ main > section.rentals a:hover {
   transition: all 0.1s linear; 
 }
 
-main > section.rentals .n29239 {
-  background-image: url("/images/n29239/n29239.png");
-}
-
-main > section.rentals .n104fs {
-  background-image: url("/images/n104fs/n104FS.jpeg");
-}
-
-main > section.rentals .n12919 {
-  background-image: url("/images/n12919/n12919.jpeg");
-}
-
-main > section.rentals .n5267q {
-  background-image: url("/images/n5267q/n5267q.png");
-}
-
-main > section.rentals .n75866 {
-  background-image: url("/images/n75866/n75866.png");
-}
-
 main > section.maintenance {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -594,7 +574,7 @@ main > section.aircraft-spotlight {
 
 /*
 
-  Gallery Pages
+  Gallery
 
 */
 
@@ -605,6 +585,26 @@ main > section.gallery {
   margin: 0 auto;
   margin-top: 3em;
   max-width: 90%;
+}
+
+.n29239, main > .hero > .gallery.n29239 {
+  background-image: url("/images/n29239/n29239.png");
+}
+
+.n104fs, main > .hero > .gallery.n104fs {
+  background-image: url("/images/n104fs/n104FS.jpeg");
+}
+
+.n12919, main > .hero > .gallery.n12919 {
+  background-image: url("/images/n12919/n12919.jpeg");
+}
+
+.n5267q, main > .hero > .gallery.n5267q {
+  background-image: url("/images/n5267q/n5267q.png");
+}
+
+.n75866, main > .hero > .gallery.n75866 {
+  background-image: url("/images/n75866/n75866.png");
 }
 
 /*
