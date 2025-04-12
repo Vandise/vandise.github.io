@@ -22,12 +22,12 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
   }
 
-  .small-image-desc-split {
+  .image-desc-split {
     display: block;
     text-align: center;
   }
 
-  .small-image-desc-split img {
+  .image-desc-split img {
     margin: 0 auto;
   }
 }
@@ -44,6 +44,10 @@
 }
 
 @media all and (max-width: 992px) {
+
+  .portrait {
+    max-width: 100%;
+  }
 
   body > header {
     display: block !important;

@@ -84,6 +84,10 @@ span.red {
   margin: 0 0.5em;
 }
 
+.icon {
+  padding-right: 0.25em;
+}
+
 section.stripe {
   position: relative;
   margin: 0.5em 2em;
@@ -202,11 +206,11 @@ main > .hero > .gallery {
 }
 
 main > .hero > .gallery.avionics {
-  background-image: url("/images/instrument.png");
+  background-image: url("/images/avionics/hero.jpeg");
 }
 
 main > .hero > .gallery.about {
-  background-image: url("/images/about/hero.png");
+  background-image: url("/images/about/gibsonfamily.jpg");
 }
 
 main > .hero > .cta {
@@ -493,15 +497,30 @@ footer h3 {
 
 */
 
-.small-image-desc-split {
+.image-desc-split {
   display: grid;
-  grid-template-columns: minmax(150px, 200px) auto;
   grid-gap: 1em;
 }
 
-.small-image-desc-split img {
-  width: 150px;
-  height: 150px;
+.image-desc-split.left {
+  grid-template-columns: minmax(150px, 200px) auto;
+}
+
+.image-desc-split.right {
+  grid-template-columns: auto minmax(150px, 200px);
+}
+
+.image-desc-split.right.medium {
+  grid-template-columns: auto minmax(250px, 400px);
+}
+
+.image-desc-split img {
+  width: 100%;
+}
+
+.portrait {
+  margin: 0 auto;
+  max-width: 75%;
 }
 
 .gallery > .see-more {
