@@ -78,8 +78,9 @@ h5 {
     padding: 0.5em 0;
   }
 
-  aside .profile-picture {
-    /*padding: 1em 0 2em 0;*/
+  aside .profile-picture figure {
+    margin-top: 0;
+    padding-top: 1em;
   }
 
   aside .information {
@@ -168,6 +169,7 @@ h5 {
 
 @media only screen and (max-width: 768px) {
   main .experience span.float-right {
+    display: block;
     width: 100%;
     text-align: right;
   }
@@ -178,11 +180,6 @@ h5 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
-  }
-
-  aside .information .expertise-container p > span {
-    width: 100%;
-    text-align: right;
   }
 }
 
