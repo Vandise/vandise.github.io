@@ -104,6 +104,27 @@ h5 {
     margin: 0 auto;
   }
 
+  aside > footer {
+    position: relative;
+    text-align: center;
+    padding: 1em;
+  }
+
+  aside > footer::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    left: 25%;
+    border-top: 1px solid #bcbdd0;
+  }
+
+  aside > footer img {
+    width: 33%;
+    max-width: 125px;
+  }
+
   main {
     padding: 0 2em;
     margin-top: 2em;
@@ -145,6 +166,26 @@ h5 {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  main .experience span.float-right {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 992px) {
+  aside .information .expertise-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+  }
+
+  aside .information .expertise-container p > span {
+    width: 100%;
+    text-align: right;
+  }
+}
+
 @media all and (max-width: 768px) {
 
 }
@@ -154,7 +195,9 @@ h5 {
 }
 
 @media all and (max-width: 992px) {
-  
+  main > header h1, main > header h2, main > header p {
+    text-align: center;
+  }
 }
 
 @media all and (min-width: 992px) {
