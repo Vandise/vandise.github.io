@@ -161,10 +161,20 @@ h5 {
   }
 
   main .experience > div > div {
-    margin-bottom: 2.5em;
+    margin-bottom: 1.5em;
   }
 
-  main .experience div header > h5 {
+  main .experience > div.professional > div header {
+    display: grid;
+    grid-template-columns: 50px auto;
+    place-items: end stretch;
+  }
+
+  main .experience > div > div header img {
+    width: 40px;
+  }
+
+  main .experience div header h5 {
     margin-bottom: 0;
   }
 }
@@ -180,6 +190,12 @@ h5 {
     display: block;
     width: 100%;
     text-align: right;
+  }
+
+  main .experience > div.professional > div header {
+    display: grid;
+    grid-template-columns: 50px auto;
+    place-items: center stretch;
   }
 }
 
